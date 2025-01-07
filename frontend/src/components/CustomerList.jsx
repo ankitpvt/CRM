@@ -9,7 +9,7 @@ const CustomerList = () => {
   const [formData, setFormData] = useState({ name: '', lname: '', email: '' });
 
   const fetchCustomers = async () => {
-    const response = await axios.get('http://localhost:5000/api/customers');
+    const response = await axios.get('https://crm-backend-eosin.vercel.app//api/customers');
     setCustomers(response.data);
   };
 
@@ -27,9 +27,9 @@ const CustomerList = () => {
   const handleUpdateSubmit = async (e) => {
     e.preventDefault();
     const updatedData = { ...formData };
-
+//http://localhost:5000
     try {
-      await axios.put(`http://localhost:5000/api/customers/${selectedCustomer._id}`, updatedData);
+      await axios.put(`https://crm-backend-eosin.vercel.app//api/customers/${selectedCustomer._id}`, updatedData);
       fetchCustomers();
       setSelectedCustomer(null);
       setFormData({ name: '', lname: '', email: '' });
@@ -39,7 +39,7 @@ const CustomerList = () => {
   };
 
   const deleteCustomer = async (id) => {
-    await axios.delete(`http://localhost:5000/api/customers/${id}`);
+    await axios.delete(`https://crm-backend-eosin.vercel.app//api/customers/${id}`);
     fetchCustomers();
   };
 

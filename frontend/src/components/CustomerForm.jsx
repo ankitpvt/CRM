@@ -8,7 +8,7 @@ const CustomerForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:5000/api/customers', formData);
+    await axios.post('https://crm-backend-eosin.vercel.app//api/customers', formData);
     setFormData({ name: '', lname: '', email: '' });
     // fetchCustomers();
   };
