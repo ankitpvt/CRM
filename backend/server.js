@@ -9,7 +9,7 @@ const app = express();
 
 // app.use(cors());
 app.use(cors({
-    origin: 'https://crm-backend-eosin.vercel.app/',  // Replace with your frontend URL
+    origin: '',  // Replace with your frontend URL
     methods: 'GET,POST,PUT,DELETE',
     credentials: true,
   }));
