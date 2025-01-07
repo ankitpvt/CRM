@@ -8,11 +8,21 @@ const CustomerList = () => {
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [formData, setFormData] = useState({ name: '', lname: '', email: '' });
 
-  const fetchCustomers = async () => {
-    const response = await axios.get('https://crm-backend-eosin.vercel.app/api/customers');
-    setCustomers(response.data);
-  };
+//   const fetchCustomers = async () => {
+//     const response = await axios.get('https://crm-backend-eosin.vercel.app/api/customers');
+//     setCustomers(response.data);
+//   };
 
+
+const fetchCustomers = async () => {
+    try {
+      const response = await axios.get('https://crm-backend-eosin.vercel.app/api/customers');
+      setCustomers(response.data);
+    } catch (error) {
+      console.error("There was an error fetching the customers:", error);
+    }
+  };
+  
   const updatedCustomer = async (id) => {
     // Fetch the selected customer data
     const customer = customers.find((customer) => customer._id === id);
