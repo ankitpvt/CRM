@@ -9,7 +9,7 @@ const app = express();
 
 // app.use(cors());
 app.use(cors({
-    origin: 'https://crm123-zeta.vercel.app',  // Replace with your frontend URL
+    origin: 'crm-frontend-tau-six.vercel.app',  // Replace with your frontend URL
     methods: 'GET,POST,PUT,DELETE',
     credentials: true,
   }));
